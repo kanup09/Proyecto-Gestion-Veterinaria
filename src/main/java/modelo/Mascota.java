@@ -1,5 +1,7 @@
 package modelo;
 
+// Importamos la clase LocalDate para manejar fechas de forma moderna.
+// Nota: Esta clase está en el paquete java.time, por lo que la importación no cambia.
 import java.time.LocalDate;
 
 /**
@@ -8,6 +10,9 @@ import java.time.LocalDate;
  */
 public class Mascota {
 
+    /**
+     * Identificador único de la mascota (ej. número de chip o ID interno).
+     */
     private int idMascota;
     private String nombre;
     private String especie;
@@ -104,8 +109,13 @@ public class Mascota {
 
     // --- Métodos Adicionales ---
 
+    /**
+     * Método de utilidad para calcular la edad (simple).
+     * @return La edad en años.
+     */
     public int getEdad() {
         if (this.fechaNacimiento != null) {
+            // Comparamos el año actual con el año de nacimiento
             return LocalDate.now().getYear() - this.fechaNacimiento.getYear();
         }
         return 0;
